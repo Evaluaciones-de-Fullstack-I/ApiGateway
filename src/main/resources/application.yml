@@ -20,7 +20,7 @@ spring:
         - id: carrito-service
           uri: https://carrito-service-ma25.onrender.com
           predicates:
-            - Path=/api/v1/carrito/**
+            - Path=/api/v1/carritos/**
 
         - id: cliente-service
           uri: https://cliente-service-tj3v.onrender.com
