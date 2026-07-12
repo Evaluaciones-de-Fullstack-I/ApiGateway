@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
@@ -7,32 +7,52 @@ spring:
   cloud:
     gateway:
       routes:
-        # 1. Microservicio de Vendedores
         - id: vendedor-service
           uri: https://vendedor-service.onrender.com
           predicates:
             - Path=/api/v1/vendedores/**
 
-        # 2. Microservicio de Administrador
         - id: administrador-service
           uri: https://administrador-service-aa6g.onrender.com
           predicates:
             - Path=/api/v1/admin/**
 
-        # 3. Microservicio de Carrito
         - id: carrito-service
           uri: https://carrito-service-ma25.onrender.com
           predicates:
             - Path=/api/v1/carrito/**
 
-        # 4. Microservicio de Clientes
         - id: cliente-service
           uri: https://cliente-service-tj3v.onrender.com
           predicates:
             - Path=/api/v1/clientes/**
 
-        # 5. Microservicio de Delivery
         - id: delivery-service
           uri: https://delivery-service-9g24.onrender.com
           predicates:
             - Path=/api/v1/delivery/**
+
+        - id: catalogo-service
+          uri: https://catalogo-service-msf3.onrender.com
+          predicates:
+            - Path=/api/productos/**
+
+        - id: reclamo-service
+          uri: https://reclamo-service.onrender.com
+          predicates:
+            - Path=/api/reclamos/**
+
+        - id: pedido-service
+          uri: https://pedido-service-3net.onrender.com
+          predicates:
+            - Path=/api/pedidos/**
+
+        - id: ventas-service
+          uri: https://ventas-service-hv1x.onrender.com
+          predicates:
+            - Path=/api/ventas/**
+
+        - id: pago-service
+          uri: https://pago-service-hbpk.onrender.com
+          predicates:
+            - Path=/api/pagos/**
